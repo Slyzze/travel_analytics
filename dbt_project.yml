@@ -1,0 +1,24 @@
+name: "ef_travel_insights"
+version: "1.0"
+config-version: 2
+
+profile: "ef_profile"
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+
+models:
+  ef_travel_insights:
+    staging:
+      materialized: view
+    marts:
+      materialized: table
+
+seeds:
+  ef_travel_insights:
+    countries:
+      file: "countries.csv"
+    marketing_channels:
+      file: "marketing_channels.csv"
